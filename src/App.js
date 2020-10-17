@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Fragment, useState} from 'react';
+import routes from "./routes";
+import {Route,Switch,Link} from "react-router-dom";
+import Header from "./Components/Header";
+import Home from "./Pages/Home";
+import Editdelete from "./Pages/Editdelete";
+import EditPage from "./Pages/EditPage";
 
 function App() {
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header></Header>
+      <Switch>
+      <Route  exact path={routes.home}>
+      <Home/>
+      </Route>
+      <Route exact path={routes.editdelete}>
+        <Editdelete/>
+      </Route>
+      <Route exact path={routes.editdeleteid}>
+      <EditPage/>
+      </Route>
+      </Switch>
+    </>
   );
 }
 

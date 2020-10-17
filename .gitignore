@@ -10,6 +10,8 @@
 
 # production
 /build
+netlifyURL.txt
+debug.log
 
 # misc
 .DS_Store
